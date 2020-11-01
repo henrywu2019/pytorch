@@ -14,6 +14,7 @@ set(CMAKE_INSTALL_RPATH "${_rpath_portable_origin}")
 # Automatically add all linked folders that are NOT in the build directory to
 # the rpath (per library?)
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+set(BUILD_PYTHON TRUE)
 
  # UBSAN triggers when compiling protobuf, so we need to disable it.
 set(UBSAN_FLAG "-fsanitize=undefined")
@@ -880,6 +881,7 @@ if(BUILD_PYTHON)
 
   # Check that Python works
   set(PYTHON_VERSION)
+  set(PYTHON_EXECUTABLE /home/henry.wu/.pyenv/versions/3.7.7/bin/python)
   if(DEFINED PYTHON_EXECUTABLE)
     execute_process(
         COMMAND "${PYTHON_EXECUTABLE}" "--version"
